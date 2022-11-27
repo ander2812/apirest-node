@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const router = Router();
+const {id} = require('./auth')
 const cors = require('cors')
 const {db} = require('../firebase')
 let schedule = []
@@ -16,6 +17,8 @@ router.get('/', cors(), async (req, res) => {
     }))
 
     res.send(myGroups)
+
+    console.log("este es el id: " + id)
 
     console.log(myGroups)
 })

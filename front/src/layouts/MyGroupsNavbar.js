@@ -1,10 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import { MyGroupGrid } from '../components/MyGroupGrid';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { LandingPages } from '../pages/LandingPages';
 
 function BasicExample() {
   return (
@@ -23,12 +23,10 @@ function BasicExample() {
     </Navbar>
 
     <section>
-        <Outlet>
-          
-        </Outlet>
+        <Outlet></Outlet>
 
     </section>
-    <LandingPages/>
+    <MyGroupGrid/>
     </>
   );
 }

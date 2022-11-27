@@ -23,13 +23,18 @@ export function Auth() {
     await login(email, password);
     const id = auth.currentUser.uid
 
-    axios.post(API,cors(),{
+    axios.post(API,{
       id: id
     }).then((response) => {
       console.log(response);
       });
       console.log(id)
     navigate("/groups");
+  };
+
+  const onClick = async () => {
+
+    navigate("/singup");
   };
   return (
     <div className="w-full max-w-xs m-auto">
@@ -55,6 +60,11 @@ export function Auth() {
             </Form.Group>
             <Button onClick={submit} variant="primary">
               Submit
+            </Button>
+            <p></p>
+            <h3>¿Aun no tienes cuenta?</h3>
+            <Button onClick={onClick} variant="primary">
+              Sing Up
             </Button>
           </Form>
         </CardContent>
