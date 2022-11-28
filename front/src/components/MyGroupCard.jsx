@@ -11,33 +11,33 @@ export function MyGroupCard({ group }) {
 
   };
 
-  return (
-    <li className={styles.movieCard}>
+  const imgUrl = "https://www.prep2021chih.org.mx/wp-content/uploads/2022/10/Focus-Groups.webp";
 
-      <div>
-      <strong>Curso</strong>
-        {group.name} 
-        <br />
-        <strong>Fecha de creacion</strong>
-        {group.creationDate}
-        <br />
-        <strong>Ubicacion</strong>
-        {group.description}
-        <br />
+  return (
+
+    <li className={styles.movieCard}>
+      <Link to={"/group/" + group.id}>
         <div>
-        <strong>Horario</strong>
-      {group.schedule.map((schedule) => schedule.day).join(", ")}
-      <br />
-      {group.schedule.map((schedule) => schedule.startHour).join(", ")}
-        - 
-      {group.schedule.map((schedule) => schedule.endHour).join(", ")}
-      </div>
-        <strong>Eliminar</strong> <br />
-        <button type="button" onClick={() => handleClick()}>
-          <AiFillDelete size={40} color="#6badf0" />
-        </button>
-      </div>
+          <br />
+          <strong>{group.name}</strong> <br />
+        </div>
+        <img
+          width={230}
+          height={345}
+          className={styles.movieImage}
+          alt={group.name}
+          src={imgUrl}
+        />
+        <div>
+        {group.schedule.map((schedule) => schedule.day).join(", ")}
+        <br />
+        {group.schedule.map((schedule) => schedule.startHour).join(", ")}
+          - 
+        {group.schedule.map((schedule) => schedule.endHour).join(", ")}
+        </div>j
+      </Link>
     </li>
+
   );
 
   

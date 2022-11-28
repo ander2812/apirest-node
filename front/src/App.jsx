@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MyGroupGrid } from "./components/MyGroupGrid";
+import { GroupDetails } from "./pages/GroupDetails";
 import { AddUser } from "./components/AddUser";
 import { AuthProvider } from "./context/authContext";
 import { Auth } from "./components/Auth";
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/singup",
     element: <AddUser/>
+  },
+  {
+    path: "/group/:groupId",
+    element: <GroupDetails/>
   },
   {
     path: "/",

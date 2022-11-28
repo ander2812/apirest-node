@@ -12,24 +12,26 @@ export function GroupCard({ group }) {
 
   return (
     <li className={styles.movieCard}>
-      <div>
-         <br />
-        <strong>{group.name}</strong> <br />
-      </div>
-      <img
-        width={230}
-        height={345}
-        className={styles.movieImage}
-        alt={group.name}
-        src={imgUrl}
-      />
-      <div>
-      {group.schedule.map((schedule) => schedule.day).join(", ")}
-      <br />
-      {group.schedule.map((schedule) => schedule.startHour).join(", ")}
-        - 
-      {group.schedule.map((schedule) => schedule.endHour).join(", ")}
-      </div>
+      <Link to={"/group/" + group.id}>
+        <div>
+          <br />
+          <strong>{group.name}</strong> <br />
+        </div>
+        <img
+          width={230}
+          height={345}
+          className={styles.movieImage}
+          alt={group.name}
+          src={imgUrl}
+        />
+        <div>
+        {group.schedule.map((schedule) => schedule.day).join(", ")}
+        <br />
+        {group.schedule.map((schedule) => schedule.startHour).join(", ")}
+          - 
+        {group.schedule.map((schedule) => schedule.endHour).join(", ")}
+        </div>
+      </Link>
     </li>
   );
 }
