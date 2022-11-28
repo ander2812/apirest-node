@@ -8,16 +8,21 @@ import axios from 'axios'
 import cors from "cors"
 import MultiSelect from "react-bootstrap-multiselect";
 
-export function AddGroup({ group }) {
-    $("element").on("event", function(){
+export function AddGroup() {
+    /*$("element").on("event", function(){
         $.get("datos de la lista", function(newData){
             that.setState(newData);
 
             // to sync manually do
             that.refs.myRef.syncData();
         });
-    });
+    });*/
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
 
+    const submit = async () => {
+        
+    }
 
     return (
         <div className="w-full max-w-xs m-auto">

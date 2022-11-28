@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { LandingPages } from '../pages/LandingPages';
 
-function BasicExample() {
+const navbar = () => {
   return (
     <>
     <Navbar className="navBg" bg="light" expand="lg">
@@ -33,4 +33,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default navbar;

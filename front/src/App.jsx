@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MyGroupGrid } from "./components/MyGroupGrid";
 import { AddUser } from "./components/AddUser";
 import { AuthProvider } from "./context/authContext";
@@ -6,6 +6,7 @@ import { Auth } from "./components/Auth";
 import './firebase-config'
 import Navbar from "./layouts/Navbar";
 import styles from "./App.module.css";
+import AddGroup from "./components/AddGroup"
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/mygroups",
     element: <MyGroupGrid/>
+  },
+  {
+    path: "/addgroup",
+    element: <AddGroup/>
   }
 ]);
 
