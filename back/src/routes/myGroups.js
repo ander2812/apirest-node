@@ -6,6 +6,7 @@ const {db} = require('../firebase')
 let schedule = []
 
 let idUser = ""
+let idGroup = ""
 
 router.options('/', cors())
 
@@ -15,6 +16,32 @@ router.post('/', async (req, res) => {
     console.log("este es el id actualizado en mygroups: " + req.body.id)
 
     res.send(req.body.id)
+    
+})
+
+router.options('/idGroup', cors())
+
+router.post('/idGroup', cors(), async (req, res) => {
+
+    idGroup = req.body.id
+    console.log("este es el id del group actualizado en mygroups: " + req.body.id)
+
+    res.send(req.body.id)
+    
+})
+
+router.delete('/', async (req, res) => {
+
+    if (idGroup != null && idGroup != "") {
+        if (idUser != null && idGroup != "") {
+
+            await db.collection('users').doc(idUser).collection('group').doc(idGroup).delete()
+
+            res.send(req.body.id)
+            
+        }
+        
+    }
     
 })
 

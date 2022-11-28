@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { idUser } from "./Auth"
 import axios from 'axios'
 import { auth, db} from "../firebase-config";
 import { doc, getDocs, query, collection} from "firebase/firestore"; 
@@ -18,11 +19,8 @@ export function MyGroupGrid() {
   const [group, setGroup] = useState([]);
 
   const loadData = () => {
-
-    const id = auth.currentUser.uid;
     axios.get(API)
     .then(resp=>{
-          console.log("Este es el id" + id)
           setGroup(resp.data)
     })
 

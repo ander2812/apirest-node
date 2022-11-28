@@ -3,7 +3,7 @@ const router = Router();
 const cors = require('cors')
 const {db} = require('../firebase')
 let schedule = []
-var id = Math.random().toString(36).substr(2, 18)
+let idUser = ""
 
 
 
@@ -24,17 +24,30 @@ router.get('/', cors(), async (req, res) => {
     
 })
 
-router.options('/', cors())
+router.options('/idUser', cors())
 
-router.post('/', async (req, res) => {
+router.post('/idUser', async (req, res) => {
 
-    const {name, username, email} = req.body
+    idUser = req.body.id
 
-    await db.collection('users').doc(id).set(req.body)
+    console.log(idUser)
+
+    res.send(req.body.id)
     
-    res.send(req.body)
+})
 
-    console.log(name, username, email,)
+router.options('/addgroup', cors())
+
+router.post('/addgroup', async (req, res) => {
+
+    if (idUser != null && idUser != "") {
+
+        await db.collection('users').doc(idUser).collection('group').doc(req.body.id).set(req.body)
+
+        res.send(req.body.id)
+        
+    }
+    
 })
 
 module.exports = router;

@@ -7,7 +7,6 @@ import { Auth } from "./components/Auth";
 import './firebase-config'
 import Navbar from "./layouts/Navbar";
 import styles from "./App.module.css";
-import AddGroup from "./components/AddGroup"
 
 const router = createBrowserRouter([
   {
@@ -29,10 +28,6 @@ const router = createBrowserRouter([
   {
     path: "/mygroups",
     element: <MyGroupGrid/>
-  },
-  {
-    path: "/addgroup",
-    element: <AddGroup/>
   }
 ]);
 

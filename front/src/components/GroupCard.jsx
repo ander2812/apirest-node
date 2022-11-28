@@ -1,5 +1,6 @@
 import styles from "./GroupCard.module.css";
-import { CgPokemon } from "react-icons/cg";
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import axios from 'axios'
 import 'firebase/firestore';
 import { auth } from "../firebase-config";
 import stylesButton from "./JoinGroup.module.css";
@@ -9,6 +10,34 @@ export function GroupCard({ group }) {
   //const db = getDatabase();
 
   const imgUrl = "https://www.prep2021chih.org.mx/wp-content/uploads/2022/10/Focus-Groups.webp";
+  const API = "http://localhost:8080/api/groups"
+
+  const handleClick = async () => {
+
+    const id = auth.currentUser.uid
+
+    axios.post(API+"/idUser",{
+      id: id
+    }).then((response) => {
+      //console.log(response);
+      });
+      //console.log(id)
+
+      axios.post(API+"/addgroup",{
+        id: group.id,
+        name: group.name,
+        description: group.description,
+        creationDate: group.creationDate,
+        ownerId: group.ownerId,
+        schedule: group.schedule
+      }).then((response) => {
+        //console.log(response);
+        });
+
+
+
+
+  };
 
   return (
     <li className={styles.movieCard}>
@@ -30,8 +59,15 @@ export function GroupCard({ group }) {
         {group.schedule.map((schedule) => schedule.startHour).join(", ")}
           - 
         {group.schedule.map((schedule) => schedule.endHour).join(", ")}
+
+        <br />
+
         </div>
       </Link>
+      <strong>Unirse</strong> <br />
+        <button type="button" onClick={() => handleClick()}>
+          <AiOutlineUsergroupAdd size={40} color="#6badf0" />
+        </button>
     </li>
   );
 }

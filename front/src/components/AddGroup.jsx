@@ -6,7 +6,6 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import React, { useState } from "react";
 import axios from 'axios'
 import cors from "cors"
-import MultiSelect from "react-bootstrap-multiselect";
 
 export function AddGroup() {
     /*$("element").on("event", function(){
@@ -49,7 +48,6 @@ export function AddGroup() {
 
                         <Form.Group className = "bg-withe shadow-md rounded px-8 pt-6 pb-8 mb-4">
                             <Form.Label>Members</Form.Label>
-                            <MultiSelect onChange={this.handleChange} ref="myRef" data={this.state.myData} multiple/>
                         </Form.Group>
 
                         <Form.Group className = "bg-withe shadow-md rounded px-8 pt-6 pb-8 mb-4">

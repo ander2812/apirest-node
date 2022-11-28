@@ -12,7 +12,7 @@ import Form from "react-bootstrap/Form";
 export function AddUser(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const API = "http://localhost:8080/api/groups"
+    const API = "http://localhost:8080/api/auth"
     const [name, setName] = useState("");
     const [username, setUserName] = useState("");
     const navigate = useNavigate();
