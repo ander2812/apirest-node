@@ -13,22 +13,26 @@ import Form from "react-bootstrap/Form";
 export function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const API = "http://localhost:8080/api/auth"
+  const API = "http://localhost:8080/api/myGroups"
   const { singUp } = useAuth();
   const { login } = useAuth();
+  const [setGroup] = useState([]);
   const navigate = useNavigate();
 
+
   const submit = async () => {
-    console.log(email, password);
+    //console.log(email, password);
     await login(email, password);
     const id = auth.currentUser.uid
+
 
     axios.post(API,{
       id: id
     }).then((response) => {
-      console.log(response);
+      //console.log(response);
+      setGroup(response.data)
       });
-      console.log(id)
+      //console.log(id)
     navigate("/groups");
   };
 
