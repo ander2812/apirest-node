@@ -5,14 +5,13 @@ const cors = require('cors')
 const {db} = require('../firebase')
 let schedule = []
 
-let idUser = ""
+let idGroup = ""
 
 router.options('/', cors())
 
 router.post('/', async (req, res) => {
 
-    idUser = req.body.id
-    console.log("este es el id actualizado en mygroups: " + req.body.id)
+    idGroup = req.body.id
 
     res.send(req.body.id)
     
@@ -20,11 +19,15 @@ router.post('/', async (req, res) => {
 
 router.get('/', cors(), async (req, res) => {
 
-    if (idUser != null && idUser != "") {
+    console.log("este es el id actualizado en groupDetails: " + idGroup)
 
-        const querySnapshot = await db.collection('users').doc(idUser).collection('group').get()
+    if (idGroup != null && idGroup != "") {
 
-        const myGroups = querySnapshot.docs.map(doc => ({
+        const querySnapshot = await db.collection('groups').doc(idGroup).get()
+
+        console.log(querySnapshot.data)
+
+        const myGroups = querySnapshot.data(doc => ({
             id: doc.id,
             creationDate: doc.data().creationDate,
             description: doc.data().description,
@@ -32,7 +35,9 @@ router.get('/', cors(), async (req, res) => {
             schedule: doc.data().schedule,
         }))
 
-    res.send(myGroups)
+        console.log(myGroups)
+
+        res.send(myGroups)
         
     }
 
