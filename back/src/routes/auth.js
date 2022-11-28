@@ -4,15 +4,7 @@ const cors = require('cors')
 const {db} = require('../firebase')
 let schedule = []
 
-router.options('/', cors())
+let getId = "";
+ 
 
-router.post('/', async (req, res) => {
-    const {id} = req.body
-
-    console.log("este es el id: " + id)
-
-    res.send("id añadido")
-    
-})
-
-module.exports = router;
+module.exports = router

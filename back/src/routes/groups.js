@@ -5,9 +5,12 @@ const {db} = require('../firebase')
 let schedule = []
 var id = Math.random().toString(36).substr(2, 18)
 
+
+
+
 router.get('/', cors(), async (req, res) => {
     const querySnapshot = await db.collection('groups').get()
-
+    //console.log("este es el body " + req.body.id)
     const groups = querySnapshot.docs.map(doc => ({
         id: doc.id,
         creationDate: doc.data().creationDate,
@@ -15,10 +18,10 @@ router.get('/', cors(), async (req, res) => {
         name: doc.data().name,
         schedule: doc.data().schedule,
     }))
-
+    
     res.send(groups)
 
-    console.log(groups)
+    
 })
 
 router.options('/', cors())
@@ -31,7 +34,7 @@ router.post('/', async (req, res) => {
     
     res.send(req.body)
 
-    console.log(name, username, email)
+    console.log(name, username, email,)
 })
 
 module.exports = router;

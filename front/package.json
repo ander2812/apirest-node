@@ -1,7 +1,7 @@
 {
-  "name": "api-movies",
+  "name": "",
   "version": "0.1.0",
-  "homepage": "https://ander2812.github.io/api-pokemon",
+  "homepage": "",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",

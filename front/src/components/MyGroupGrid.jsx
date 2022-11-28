@@ -13,16 +13,20 @@ export function MyGroupGrid() {
     return new URLSearchParams(useLocation().search);
   }
 
-  const API = "http://localhost:8080/api/myGroups"
+  const API = "http://localhost:8080/api/mygroups"
 
   const [group, setGroup] = useState([]);
 
   const loadData = () => {
 
+    const id = auth.currentUser.uid;
     axios.get(API)
     .then(resp=>{
+          console.log("Este es el id" + id)
           setGroup(resp.data)
     })
+
+    
 
   }
 
