@@ -1,7 +1,7 @@
 {
   "name": "restapi-node",
   "version": "0.1.0",
-  "homepage": "https://ander2812.github.io/apirest-node/front/",
+  "homepage": "https://ander2812.github.io/apirest-node/",
   "main": "App.jsx",
   "private": true,
   "dependencies": {
