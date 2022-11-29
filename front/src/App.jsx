@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, BrowserRouter as Router, Routes, R
 import { MyGroupGrid } from "./components/MyGroupGrid";
 import { AddGroup } from "./components/AddGroup"
 import { GroupDetails } from "./pages/GroupDetails";
+import { ProfileDetails } from "./pages/ProfileDetails";
 import { AddUser } from "./components/AddUser";
 import { AuthProvider } from "./context/authContext";
 import { Auth } from "./components/Auth";
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
   {
     path: "/mygroups",
     element: <MyGroupGrid/>
+  },
+
+  {
+    path: "/profileDetails",
+    element: <ProfileDetails/>
   }
 ]);
 
@@ -40,7 +46,7 @@ export function App() {
   return (
     <div>
       <header>
-        <h1 className={styles.title}>Grupos</h1>
+        <h1 className={styles.title}>MyApp</h1>
       </header>
       <main>
         <AuthProvider>

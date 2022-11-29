@@ -17,6 +17,7 @@ const navbar = () => {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/groups">Home</Nav.Link>
             <Nav.Link as={Link} to="/mygroups">Mis grupos</Nav.Link>
+            <Nav.Link as={Link} to="/profileDetails">Perfil</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
