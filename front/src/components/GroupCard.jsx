@@ -54,11 +54,11 @@ export function GroupCard({ group }) {
           src={imgUrl}
         />
         <div>
-        {group.schedule.map((schedule) => schedule.day).join(", ")}
+        {group.schedule.map((schedule) => schedule.day)}
         <br />
-        {group.schedule.map((schedule) => schedule.startHour).join(", ")}
+        {group.schedule.map((schedule) => parseInt(schedule.startHour))}
           - 
-        {group.schedule.map((schedule) => schedule.endHour).join(", ")}
+        {group.schedule.map((schedule) => parseInt(schedule.endHour))}
 
         <br />
 

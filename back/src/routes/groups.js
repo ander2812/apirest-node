@@ -24,6 +24,15 @@ router.get('/', cors(), async (req, res) => {
     
 })
 
+router.options('/', cors())
+
+router.post('/', async (req, res) => {
+
+    await db.collection('groups').doc(req.body.id).set(req.body)
+    
+    res.send(req.body)
+})
+
 router.options('/idUser', cors())
 
 router.post('/idUser', async (req, res) => {

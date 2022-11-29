@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MyGroupGrid } from "./components/MyGroupGrid";
+import { AddGroup } from "./components/AddGroup"
 import { GroupDetails } from "./pages/GroupDetails";
 import { AddUser } from "./components/AddUser";
 import { AuthProvider } from "./context/authContext";
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/groups",
     element: <Navbar />,
+  },
+  {
+    path: "/addgroup",
+    element: <AddGroup/>,
   },
   {
     path: "/singup",

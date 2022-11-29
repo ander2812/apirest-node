@@ -23,14 +23,18 @@ export function GroupDetails() {
     axios.get(API)
     .then(resp=>{
 
-      setGroup(resp.data)
-      console.log(resp.data)
+      if(resp.data != null){
+
+        setGroup(resp.data)
+        console.log(resp.data)
+
+      }
       
     })
     
   }, [groupId]);
 
-  console.log("este es el grupo " + group)
+  console.log("este es el grupo " + group.name)
 
 
 
