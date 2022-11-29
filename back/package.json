@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "predeploy": "npm run dev",
+    "predeploy": "npm run deploy",
     "deploy": "gh-pages -d dev",
     "type": "module"
   },
