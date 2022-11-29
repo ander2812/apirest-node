@@ -23,7 +23,7 @@ export function GroupGrid() {
           setGroup(resp.data)
     })
 
-    console.log(group)  
+    console.log("este es el grupo: " + group)  
 
   }
 
