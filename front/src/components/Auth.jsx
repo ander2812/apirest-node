@@ -14,9 +14,11 @@ export function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const API = "http://localhost:8080/api/myGroups"
+  const API2 = "http://localhost:8080/api/profileDetails"
   const { singUp } = useAuth();
   const { login } = useAuth();
   const [setGroup] = useState([]);
+  const [setCourse] = useState([]);
   const navigate = useNavigate();
 
 
@@ -34,6 +36,14 @@ export function Auth() {
       });
       //console.log(id)
     navigate("/groups");
+
+    axios.post(API2,{
+      id: id
+    }).then((response) => {
+      //console.log(response);
+      setGroup(response.data)
+      });
+      //console.log(id)
   };
 
   const onClick = async () => {

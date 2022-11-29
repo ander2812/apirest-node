@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 
 export function ProfileCard({ group }) {
 
-  const API = "http://localhost:8080/api/myGroups"
+  const API = "http://localhost:8080/api/mygroups"
+  const imgUrl = "https://www.advenium.com/wp-content/uploads/2022/03/shutterstock_1464234134-1024x684-1.jpg";
 
   const handleClick = async () => {
 
@@ -27,12 +28,10 @@ export function ProfileCard({ group }) {
 
   };
 
-  const imgUrl = "https://www.prep2021chih.org.mx/wp-content/uploads/2022/10/Focus-Groups.webp";
-
   return (
 
-    <li className={styles.movieCard}>
-      <Link to={"/group/" + group.id}>
+    <li className={styles.groupCard}>
+      <Link to={"/profileDetails/"}>
         <div>
           <br />
           <strong>{group.name}</strong> <br />
@@ -40,7 +39,7 @@ export function ProfileCard({ group }) {
         <img
           width={230}
           height={345}
-          className={styles.movieImage}
+          className={styles.groupImage}
           alt={group.name}
           src={imgUrl}
         />

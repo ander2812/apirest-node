@@ -12,7 +12,7 @@ export function ProfileGrid() {
     return new URLSearchParams(useLocation().search);
   }
 
-  const API = "http://localhost:8080/api/myGroups"
+  const API = "http://localhost:8080/api/mygroups"
 
   const [group, setGroup] = useState([]);
   const {user} = useAuth()
@@ -20,10 +20,10 @@ export function ProfileGrid() {
 
     axios.get(API)
     .then(resp=>{
-        console.log(resp.data.ownerId)
+        setGroup(resp.data)
+    })
 
-            setGroup(resp.data)
-    })  
+    console.log("profileGrid: " + group)
 
   }
 

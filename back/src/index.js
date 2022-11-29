@@ -10,6 +10,7 @@ app.use(express.urlencoded({extended: false}));
 
 app.use(require('./routes/index'));
 app.use('/api/groups',require('./routes/groups'));
+app.use('/api/courses',require('./routes/courses'));
 app.use('/api/groupDetails',require('./routes/groupDetails'));
 app.use('/api/profileDetails',require('./routes/profileDetails'));
 app.use('/api/myGroups',require('./routes/myGroups'));
