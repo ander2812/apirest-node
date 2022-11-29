@@ -13,7 +13,7 @@ export function ProfileDetails() {
   const [user, setUser] = useState({});
   var sum = 0;
   var temp = false;
-  const imgUrl = "https://www.prep2021chih.org.mx/wp-content/uploads/2022/10/Focus-Groups.webp";
+  const imgUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png";
   const API = "http://localhost:8080/api/profileDetails";
   var count = 0
 
@@ -22,6 +22,11 @@ export function ProfileDetails() {
   const handleClick = async () => {
     console.log("presionando boton")
     navigate("/addGroup")
+  }
+
+  const handleClick2 = async () => {
+    auth.signOut();
+    navigate("/")
   }
 
   useEffect(() => {
@@ -85,6 +90,10 @@ export function ProfileDetails() {
 
         <button type="button" onClick={() => handleClick()}>
           <BiBookAdd size={40} color="#6badf0"/>
+        </button>
+
+        <button type="button" onClick={() => handleClick2()}>
+          <BiBookAdd size={80} color="#6badf0"/>
         </button>
       </div>
 

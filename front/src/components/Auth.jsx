@@ -45,7 +45,7 @@ export function Auth() {
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Form>
-            <Form.Group className="bg-withe shadow-md rounded px-8 pt-6 pb-8 mb-4" controlId="formBasicEmail">
+            <Form.Group className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"

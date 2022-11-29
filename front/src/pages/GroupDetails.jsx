@@ -8,7 +8,7 @@ export function GroupDetails() {
   const [group, setGroup] = useState({});
   var sum = 0;
   var temp = false;
-  const imgUrl = "https://www.prep2021chih.org.mx/wp-content/uploads/2022/10/Focus-Groups.webp";
+  const imgUrl = "https://img.freepik.com/vector-gratis/vista-superior-manos-sosteniendo-libros-ilustracion-plana_74855-17930.jpg?auto=format&h=200";
   var count = 0
   const API = "http://localhost:8080/api/groupDetails"
 
