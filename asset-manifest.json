@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/apirest-node/static/css/main.770a41ce.css",
+    "main.js": "/apirest-node/static/js/main.735bc4b3.js",
+    "index.html": "/apirest-node/index.html",
+    "main.770a41ce.css.map": "/apirest-node/static/css/main.770a41ce.css.map",
+    "main.735bc4b3.js.map": "/apirest-node/static/js/main.735bc4b3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.770a41ce.css",
+    "static/js/main.735bc4b3.js"
+  ]
+}
