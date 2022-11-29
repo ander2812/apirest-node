@@ -1,5 +1,6 @@
 import { FaThumbsUp } from "react-icons/fa";
 import axios from 'axios'
+import { ProfileGrid } from "../components/ProfileGrid"
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./MovieDetails.module.css";
 import { useLocation } from "react-router-dom";
@@ -17,8 +18,6 @@ export function ProfileDetails() {
   const API = "http://localhost:8080/api/profileDetails";
   var count = 0
 
-  const id = auth.currentUser.uid;
-
   const handleClick = async () => {
     console.log("presionando boton")
     navigate("/addGroup")
@@ -31,22 +30,24 @@ export function ProfileDetails() {
 
   useEffect(() => {
 
-    axios.post(API,{
-      id: id
-    }).then((response) => {
-      });
-
     axios.get(API)
     .then(resp=>{
 
-      if(resp.data != null){
-
         setUser(resp.data)
         console.log(resp.data)
-
-      }
       
     })
+
+    if (user.id != null) {
+
+      axios.post(API,{
+        id: user.id
+      }).then((response) => {
+        });
+
+        console.log("este es el id del usuario "+user.id)
+      
+    }
     
   },[]);
 
@@ -59,15 +60,18 @@ export function ProfileDetails() {
   return (
     
     
-    <div className={styles.movieDetails}>
+    <div>
+
+      <div className={styles.movieDetails}>
+
+      <div className={styles.col}>
+
       <img
         className={`${styles.col} ${styles.movieImage}`}
         
         src={imgUrl}
         alt={user.name}
       />
-
-      <div className={styles.col}>
       <div>
         <h1>Perfil:</h1>
       </div>
@@ -96,6 +100,10 @@ export function ProfileDetails() {
           <BiBookAdd size={80} color="#6badf0"/>
         </button>
       </div>
+
+      </div>
+
+      <ProfileGrid/>
 
     </div>
   );
