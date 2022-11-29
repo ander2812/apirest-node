@@ -2,10 +2,11 @@
   "name": "restapi-node",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://ander2812.github.io/apirest-node/",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "predeploy": "npm run build",
+    "predeploy": "npm install",
     "deploy": "gh-pages -d build",
     "type": "module"
   },
