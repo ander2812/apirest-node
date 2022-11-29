@@ -10,7 +10,6 @@ import CardContent from "@mui/material/CardContent";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 export function AddUser(){
-    var id = Math.random().toString(36).substr(2, 18)
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const API = "http://localhost:8080/api/auth"
@@ -22,6 +21,8 @@ export function AddUser(){
     const submit = async () => {
         console.log(email, password, name, username);
         await singUp(email, password);
+
+        const id = auth.currentUser.uid
 
         axios.post(API,{
 
