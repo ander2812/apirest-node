@@ -11,19 +11,22 @@ export function ProfileCard({ group }) {
   const API = "http://localhost:8080/api/mygroups"
   const imgUrl = "https://www.advenium.com/wp-content/uploads/2022/03/shutterstock_1464234134-1024x684-1.jpg";
 
+  axios.post(API+"/idGroup",{
+    id: group.id,
+    
+    owner_id: group.owner_id
+  }).then((response) => {
+    //console.log(response);
+    });
+
   const handleClick = async () => {
 
-    axios.post(API+"/idGroup",{
-      id: group.id
-    }).then((response) => {
-      //console.log(response);
-      });
+    
       //console.log(id)
 
         axios.delete(API)
         .then(resp=>{
     })
-
     window.location.reload(false);
 
   };
